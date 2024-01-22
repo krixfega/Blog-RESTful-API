@@ -19,15 +19,15 @@ use App\Http\Controllers\BlogPostController;
 
 Route::middleware('jwt.auth')->group(function () {
     // Blog Post Routes
-    Route::post('/blog-posts', 'BlogPostController@store');
-    Route::get('/blog-posts', 'BlogPostController@index');
-    Route::get('/blog-posts/{id}', 'BlogPostController@show');
-    Route::put('/blog-posts/{id}', 'BlogPostController@update');
-    Route::delete('/blog-posts/{id}', 'BlogPostController@destroy');
+    Route::post('/blog-posts', 'App\Http\Controllers\BlogPostController@store');
+    Route::get('/blog-posts', 'App\Http\Controllers\BlogPostController@index');
+    Route::get('/blog-posts/{id}', 'App\Http\Controllers\BlogPostController@show');
+    Route::put('/blog-posts/{id}', 'App\Http\Controllers\BlogPostController@update');
+    Route::delete('/blog-posts/{id}', 'App\Http\Controllers\BlogPostController@destroy');
 });
 
 
 // User Authentication Routes
-Route::post('/register', 'AuthController@register');
-Route::post('/login', 'AuthController@login');
+Route::post('/register', 'App\Http\Controllers\AuthController@register');
+Route::post('/login', 'App\Http\Controllers\AuthController@login');
 

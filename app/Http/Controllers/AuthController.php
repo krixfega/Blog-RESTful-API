@@ -45,6 +45,9 @@ class AuthController extends Controller
                 return response()->json(['error' => 'Invalid credentials'], 401);
             }
         } catch (JWTException $e) {
+            \Log::error('Login Exception: ' . $e->getMessage());
+            \Log::error('Trace: ' . $e->getTraceAsString());
+            
             return response()->json(['error' => 'Could not create token'], 500);
         }
 
