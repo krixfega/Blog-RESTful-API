@@ -54,8 +54,8 @@ The Blog API is a Laravel-based RESTful API that provides functionality for mana
 ## Authentication
 Before making requests to the API, authenticate using the /login endpoint to obtain an authentication token. Include the token in the headers of subsequent requests for authorization.
 
-### Endpoints
-# 1. Create a Blog Post
+## Endpoints
+### 1. Create a Blog Post
 Endpoint: POST /api/blog-posts
 
 Request Format:
@@ -72,7 +72,7 @@ Response:
             }
         }
 
-# 2. Retrieve All Blog Posts
+### 2. Retrieve All Blog Posts
 Endpoint: GET /api/blog-posts
 
 Response:
@@ -81,7 +81,7 @@ Response:
             // List of blog posts
             ]
         }
-# 3. Retrieve a Specific Blog Post
+### 3. Retrieve a Specific Blog Post
 Endpoint: GET /api/blog-posts/{id}
 
 Response:
@@ -91,7 +91,7 @@ Response:
             }
         }
 
-# 4. Update a Blog Post
+### 4. Update a Blog Post
 Endpoint: PUT /api/blog-posts/{id}
 
 Request Format:
@@ -107,7 +107,7 @@ Response:
                 // Updated blog post details
             }
         }
-# 5. Delete a Blog Post
+### 5. Delete a Blog Post
 Endpoint: DELETE /api/blog-posts/{id}
 
 Response:
