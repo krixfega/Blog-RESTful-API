@@ -19,7 +19,7 @@ class BlogPostController extends Controller
         $blogPost = new BlogPost([
             'title' => $request->input('title'),
             'content' => $request->input('content'),
-            'author_id' => $user->id,
+            'author' => $request->input('author'),
         ]);
 
         $blogPost->save();
@@ -50,6 +50,7 @@ class BlogPostController extends Controller
         $this->validate($request, [
             'title' => 'required|string',
             'content' => 'required|string',
+            'author' => 'string',
         ]);
 
         $blogPost = BlogPost::find($id);
@@ -57,9 +58,10 @@ class BlogPostController extends Controller
         if (!$blogPost) {
             return response()->json(['error' => 'Blog post not found'], 404);
         }
-
+        
         $blogPost->title = $request->input('title');
         $blogPost->content = $request->input('content');
+        $blogPost->author = $request->input('author');
         $blogPost->save();
 
         return response()->json(['message' => 'Blog post updated successfully']);
